@@ -157,29 +157,7 @@ python main.py --scraper live --poll-interval 30
 
 ---
 
-## Running with Celery (Optional Bonus)
 
-Make sure Redis is running, then open **two separate terminals**:
-
-**Terminal 1 — Start the Celery worker:**
-```bash
-celery -A scrappers.tasks worker --loglevel=info
-```
-
-**Terminal 2 — Start the Celery beat scheduler:**
-```bash
-celery -A scrappers.tasks beat --loglevel=info
-```
-
-The beat scheduler will automatically run:
-
-| Task | Schedule |
-|---|---|
-| Refresh match list | Every 30 minutes |
-| Scrape Match Info + Squads | Every 30 minutes |
-| Scrape Live + Scorecard | Every 60 seconds |
-
----
 
 ## MongoDB Collections
 
